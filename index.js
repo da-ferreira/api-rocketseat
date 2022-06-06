@@ -3,21 +3,13 @@ const app = express();
 
 app.listen(3000, () => console.log('Aplicação iniciada'));
 
-// Middleware 'codifica' os dados para Json
+// Middleware que transforma tudo que chega na API para Json
 app.use(express.json());
 
-// app.route('/').post((req, res) => res.send(req.body));
-
-let author = 'David';
-
-app.route('/')
-	.get((req, res) => res.send(author))
-	.put((req, res) => {
-		author = req.body.author;
-		res.send(author);
-		console.log(author);
-	});
-
-app.route('/:id').delete((req, res) => {
-	res.send(req.params);
+app.route('/').post((req, res) => {
+	const { nome, cidade, livros } = req.body; // const nome = req.body.nome, const cidade = req.body.cidade
+	// res.send(`${nome} | ${cidade} | ${livros}`);
+	res.send(livros);
+	// console.log(`${nome} | ${cidade} | ${livros}`);
+	console.log(...livros);
 });
