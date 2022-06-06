@@ -1,0 +1,13 @@
+{
+  "name": "first-api-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "David Ferreira",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
